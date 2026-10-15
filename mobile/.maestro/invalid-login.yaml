@@ -1,0 +1,12 @@
+appId: ai.happymonkey.checkinkids
+---
+- launchApp:
+    clearState: true
+- tapOn: "Email"
+- inputText: "no-account@example.invalid"
+- tapOn: "Password"
+- inputText: "not-a-real-password"
+- tapOn:
+    text: "Log in"
+    index: 1
+- assertVisible: "Invalid email or password."

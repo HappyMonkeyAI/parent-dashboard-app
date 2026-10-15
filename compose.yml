@@ -1,0 +1,51 @@
+services:
+  db:
+    image: docker.io/library/postgres:16-alpine
+    container_name: checkin-kids-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DATABASE}
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - checkin_kids_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER} -d ${PG_DATABASE}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+  web:
+    image: localhost/checkin-kids-web:latest
+    build:
+      context: .
+      dockerfile: Containerfile
+    container_name: checkin-kids-web
+    restart: always
+    env_file:
+      - .env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      AUTH_TRUST_HOST: "true"
+      NODE_ENV: production
+      PORT: 3020
+    ports:
+      - "127.0.0.1:3020:3020"
+    depends_on:
+      db:
+        condition: service_healthy
+  reminders:
+    image: localhost/checkin-kids-web:latest
+    container_name: checkin-kids-reminders
+    restart: always
+    env_file:
+      - .env.local
+    environment:
+      NODE_ENV: production
+    command: ["node", "/app/deploy/reminder-worker.mjs"]
+    depends_on:
+      - web
+
+volumes:
+  checkin_kids_postgres_data:

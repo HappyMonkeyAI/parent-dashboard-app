@@ -1,0 +1,7 @@
+appId: ai.happymonkey.checkinkids
+---
+- launchApp
+- assertVisible: "CheckIn Kids"
+- assertVisible: "Email"
+- assertVisible: "Password"
+- assertVisible: "Log in"

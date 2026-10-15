@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "CheckIn Kids",
+    "slug": "checkin-kids",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "platforms": ["android"],
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "ai.happymonkey.checkinkids",
+      "permissions": []
+    },
+    "plugins": ["expo-secure-store", "expo-status-bar"]
+  }
+}

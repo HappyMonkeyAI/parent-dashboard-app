@@ -1,0 +1,8 @@
+appId: ai.happymonkey.checkinkids
+---
+- launchApp
+- assertVisible: "Today"
+- assertVisible: "Refresh"
+- assertVisible: "Log out"
+- tapOn: "Refresh"
+- assertVisible: "Today"

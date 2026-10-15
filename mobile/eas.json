@@ -1,0 +1,12 @@
+{
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": { "buildType": "apk" }
+    },
+    "e2e-test": {
+      "withoutCredentials": true,
+      "android": { "buildType": "apk" }
+    }
+  }
+}

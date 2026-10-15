@@ -1,0 +1,28 @@
+{
+  "name": "CheckIn Kids",
+  "short_name": "CheckIn Kids",
+  "description": "A calm, predictable daily routine dashboard for children and their parents.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#5B8A9A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

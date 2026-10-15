@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# typescript build artifacts
+*.tsbuildinfo
+
+# env files — never commit real credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+google-services.json
+*.dump
+*.sql.gz
+*.db
+*.apk
+*.aab
+builds/
+
+# logs
+*.log
+pnpm-debug.log*
+
+# leftover db from an unrelated MCP project (see CONTEXT.md)
+resource-sentinel.db
