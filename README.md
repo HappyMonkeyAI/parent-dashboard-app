@@ -74,5 +74,5 @@ The project is scaffolded. Use the container commands above for the local runtim
 
 ## License
 
-[MIT](LICENSE) © 2026 Parent Portal contributors
+[MIT](LICENSE) © 2026 Stephen Phillips
 
